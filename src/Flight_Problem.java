@@ -8,37 +8,6 @@ import java.util.List;
 
 public class Flight_Problem {
 
-//	// Function to print the route taken
-//	public static void printPath(String path, Node_flight last) {
-//		for (Node_flight i : path) {
-//			System.out.print(i.pred + " - ");
-//		}
-//		System.out.println(last.pred);
-//	}
-//
-//	public static void findPaths(Node_flight[][] mat, String path, int i, int j) {
-//		int M = mat.length;
-//		int N = mat[0].length;
-//
-//		// if we have reached the last cell, print the route
-//		if (i == M - 1 && j == N - 1) {
-//			printPath(path, mat[i][j]);
-//			return;
-//		}
-//		// include current cell in path
-//		path.add((mat[i][j]));
-//		// move right
-//		if ((i >= 0 && i < M && j + 1 >= 0 && j + 1 < N)) {
-//			findPaths(mat, path, i, j + 1);
-//		}
-//		// move down
-//		if ((i + 1 >= 0 && i + 1 < M && j >= 0 && j < N)) {
-//			findPaths(mat, path, i + 1, j);
-//		}
-//		// remove current cell from path
-//		path.remove(path.size() - 1);
-//	}
-
 	public static int min_for_path(int up, int left) {
 		return (up < left) ? up : left; // returns the min
 	}

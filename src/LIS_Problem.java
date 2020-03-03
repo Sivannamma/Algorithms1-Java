@@ -85,12 +85,32 @@ public class LIS_Problem {
 		return temp;
 	}
 
+	public static int AB_arrProblem(int[] A, int[] B) {
+		int n = A.length;
+		int[] mat = new int[n];
+		int k = 0, ind = 0;
+		for (int i = 0; i < n; i++) {
+			if (B[i] == 1) {
+				ind = i;
+				break;
+			}
+		}
+		mat[0] = A[ind];
+		for (int i = ind + 1; i < mat.length; i++) {
+			if (B[i] == 1) {
+				if (mat[k] < A[i])
+					mat[++k] = A[i];
+				else
+					mat[binarySearch(mat, A[i], k)] = A[i];
+			}
+		}
+		return k + 1;
+	}
+
 	public static void main(String[] args) {
-		int[] arr = { 0, 90, 1, 100, 3, 9, 2, 11, 12 };
-//		 String b = algorithm_5(arr);
-//		 System.out.println(b);
-		int count = algorithm_4(arr);
-		System.out.println(count);
+		int[] A = { 3,2,8,10,7,4,1,5};
+		int[] B = { 1, 0, 0, 1, 0, 0, 0, 1, 1, 1 };
+		System.out.println(algorithm_5(A));
 	}
 
 }
